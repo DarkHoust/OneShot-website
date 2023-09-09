@@ -19,14 +19,15 @@ body {
     text-align: center;
     color: white;
     font-size: 25px;
+    z-index: 1;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .trailer-video {
     position: absolute;
-    top: 500px;
-    left: 366px;
-    z-index: 1;
+    top: 620px;
+    left: 350px;
+    z-index: 2;
 }
 
 .transition-to-pink {
