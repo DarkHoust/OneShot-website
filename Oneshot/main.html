@@ -3,29 +3,78 @@
         <meta charset="UTF-8"> 
         <title>OneShot</title>
         <link rel="stylesheet" href="css.css"> 
-        <link rel="icon" type="image/png" href="/Users/darkhost/Documents/GitHub/OneShot/Image/lamp-icon.png">
+        <link rel="icon" type="image/png" href="../Image/lamp-icon.png">
     </head>
 
     <body>
+        <iframe src="../sound/BGM Happily Ever After.mp3" id="audio" allow="autoplay" style="display: none;" ></iframe>
+        
+        <audio id="player" autoplay loop>
+            <source src="../sound/BGM Happily Ever After.mp3" type="audio/mp3">
+        </audio>
+    
+        <!--I'm so confused, it's not autoplaying sound. I suppose it's disabled by Chrome -->
+
         <div class="logo">
-            <img src="/Users/darkhost/Documents/GitHub/OneShot/Image/background.jpg" height:1000px;>
+            <img src="../Image/background.jpg" height:1000px;>
         </div>
 
         <hr class="line">
 
         <div class="description-text"> 
-            OneShot is a top down Puzzle/Adventure game with unique gameplay <br>
-            capabilites. You, as the player, must guide Nike through a mysterious <br>
+            <strong>OneShot</strong> is a top down Puzzle/Adventure game with unique gameplay <br>
+            capabilites. You, as the player, must guide Niko through a mysterious <br>
             world, utilizing items, characters, and the enviroment to progress. <br>
             <br>
             The Life of a lost child and the fate of a steadly decaying world hang <br>
-            in the balance... and not everyone is interested in preserving them.
+            in the <em>balance</em>... and not everyone is interested in preserving them.
         </div>
         
         <div class = "trailer-text"><h1 >Trailer</h1></div>
         
         <hr class="line"> 
 
+        <div class="store-link">
+            <ol style="list-style-type: none;">
+                <ul style="list-style-type: none;">
+                    <p style="color: white; font-weight: bold;">Aviable On</p>
+
+                    <li> 
+                        <a href="https://store.steampowered.com/app/420530/OneShot/">
+                            <img class="link-icon-steam" src="../Image/steamlogo.png">
+                            <br>
+                            <p style="color: white;">Steam</p>
+                        </a>
+                    </li>
+
+                    <li> 
+                        <a href="https://store.playstation.com/ru-ua/product/EP3919-CUSA34846_00-ONESHOTWMEEU0000">
+                            <img class="link-icon-playstation" src="../Image/psstorelogo.png">
+                            <br>
+                            <p style="color: white;">PS Store</p>
+                        </a>
+                    </li>
+
+                    <li> 
+                        <a href="https://www.nintendo.com/store/products/oneshot-world-machine-edition-switch/">
+                            <img class="link-icon-nintendo" src="../Image/nintendologo.png">
+                            <br>
+                            <p style="color: white;">Nintendo</p>
+                        </a>
+                    </li>
+
+                    <li> 
+                        <a href="https://www.xbox.com/ru-RU/games/store/oneshot-world-machine-edition/9MX3GWKZHVTX">
+                            <img class="link-icon-xbox" src="../Image/xboxlogo.png">
+                            <br>
+                            <p style="color: white;">Xbox</p>
+                        </a>
+                    </li>
+                </ul>
+            </ol>
+            
+        </div>
+    
         <div class="trailer-video">
             <iframe width="750px" height="421,88px" src="https://www.youtube.com/embed/ctYNBd6t4-g" frameborder = "0">
             </iframe>
@@ -34,7 +83,7 @@
         <div class="pink-gradient"></div>
 
         <div class="transition-image">
-            <img width="158%" src="/Users/darkhost/Documents/GitHub/OneShot/Image/Cg_red.png">  
+            <img width="158%" src="../Image/Cg_red.png">  
         </div>
 
     </body>

@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -28,9 +29,8 @@ body {
     left: 340px;
     color: white;
     font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-
 }
+
 .trailer-text {
     position: absolute;
     top: 530px;
@@ -38,12 +38,11 @@ body {
     color: white;
     font-size: 18px;
     z-index: 1;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .trailer-video {
     position: absolute;
-    top: 620px;
+    top: 600px;
     left: 120px;
     z-index: 2;
     border: 4px solid;
@@ -68,3 +67,40 @@ body {
     border: 0px;
 }
 
+.store-link {
+    z-index: 3;
+    padding: 30px;
+    text-align: center;
+    position: absolute;
+    top: 600px;
+    left: 1000px;
+    width: 100px;
+    height: 361.88px;
+    border: 4px solid;
+    border-radius: 5px;
+    border-color: rgba(235,72,143,0.5)
+}
+
+.link-icon-steam{
+    height: 25px;
+    width: 25px;
+    margin-top: 30px;
+}
+
+.link-icon-playstation{
+    height: 25px;
+    width: 25px;
+    margin-top: 30px;
+}
+
+.link-icon-nintendo{
+    height: 25px;
+    width: 25px;
+    margin-top: 30px;
+}
+
+.link-icon-xbox{
+    height: 25px;
+    width: 25px;
+    margin-top: 30px;
+}   
