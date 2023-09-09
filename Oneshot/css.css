@@ -4,14 +4,39 @@ body {
 
 .logo {
     text-align: center;
+    position: relative;
 }
 
 .description-text {
     position: absolute;
+    top: 300px;
+    left: 360px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.text-preset {
     text-align: center;
     color: white;
     font-size: 25px;
-    font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
 }
 
+.trailer-video {
+    position: absolute;
+    top: 500px;
+    left: 366px;
+    z-index: 1;
+}
+
+.transition-to-pink {
+    height: 400px;
+    position: relative;
+    top: 100px;
+    background-image: linear-gradient(to bottom, rgba(25,5,26,0), rgba(25,5,26,1));
+}
+
+.transition {
+    position: relative;
+    top: 100px;
+}
