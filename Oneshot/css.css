@@ -5,3 +5,13 @@ body {
 .logo {
     text-align: center;
 }
+
+.description-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
