@@ -1,2 +1,2 @@
-# OneShot
- Website for "Oneshot"
+# Oneshot website
+ Updated version of "Oneshot" game's website
