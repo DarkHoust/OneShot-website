@@ -53,12 +53,11 @@ body {
 }
 
 .trailer-video {
+    aspect-ratio: 16/9;
     float: left;
     margin-right: 25px;
     position: absolute;
-    height: auto;
-    max-height: 421,88px;
-    max-width: 750px;
+    max-width: 720px;
     width: 100%;
     top: 20px;
     left: 10vw;
@@ -113,8 +112,8 @@ body {
     height: 400px;
     width: 100%;
     max-width: 100%;
-    position: absolute;
-    top: 20px;
+    position: relative;
+    top: 50px;
     background-image: linear-gradient(to bottom, rgba(25,5,26,0), rgba(25,5,26,1));
 }
 
@@ -123,4 +122,20 @@ body {
     top: 0px;
     height: auto;
     width: 100%;
+}
+
+.link-to-requirement{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: rgb(26,4,26);
+}
+
+.link-to-requirement a {
+    color: white;
+    text-decoration: none;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
