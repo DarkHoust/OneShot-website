@@ -41,9 +41,12 @@ html{
 .bottom-image {
     width: 100%;
     height: auto;
+    align-items: end;
+    display: block;
 }
 
 .bottom-image img {
     width: 100%;
     height: auto;
+    align-items: end;
 }
