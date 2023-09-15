@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 html{
@@ -17,16 +18,12 @@ html{
 
 .logo {
     background-color: blanchedalmond;
-    width: 100%;
     height: auto;
     max-height: 70px;
+    padding-left: 30px;
     align-items: center;
-    text-align: center;
-}
-
-.navigation-tool hr{
-    color: brown;
-    z-index: 1;
+    display: flex;
+    float: left;
 }
 
 
@@ -35,12 +32,15 @@ html{
     width: 100%;
     height: auto;
     max-height: 70px;
-
+    display: flex;
 }
 
 .bottom-image {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     height: auto;
+    max-height: 480px;
     align-items: end;
     display: block;
 }
@@ -48,5 +48,23 @@ html{
 .bottom-image img {
     width: 100%;
     height: auto;
+    max-height: 480px;
     align-items: end;
+}
+
+.home a{
+    font-size: 20px;
+    text-decoration: none;
+    align-items: center;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.home a{
+    padding-top: 0.6vh;
+    padding-left: 1vw;
+    align-items: center;
+    float: right;
+    display: flex;
+    color: black;
 }
