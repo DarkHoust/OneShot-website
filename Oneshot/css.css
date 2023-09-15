@@ -28,6 +28,12 @@ body {
     top: 300px;
     color: white;
     font-size: 18px;
+    
+}
+
+.description-text p{
+    text-shadow: 0 0 5px yellow;
+    z-index: 4;
 }
 
 .line {
@@ -50,6 +56,7 @@ body {
     color: white;
     font-size: 18px;
     z-index: 1;
+    text-shadow: 0 0 5px yellow;
 }
 
 .trailer-video {
@@ -138,4 +145,5 @@ body {
     text-decoration: none;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    text-shadow: 0 0 5px yellow;
 }
