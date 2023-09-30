@@ -1,0 +1,67 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+
+html{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    background-color: #424242;
+}
+
+.bg-image{
+    width: 100%;
+    height: auto;
+}
+
+.trailer-text {
+    z-index: 2;
+    top: 35vw;
+}
+
+.glow-effect{
+    filter: drop-shadow(0 0 15px #e3aa56);
+}
+
+.trailer-video {
+    z-index: 2;
+    border: 4px solid;
+    border-radius: 5px;
+    border-color: rgba(235,72,143,0.5);
+}
+
+.store-link {
+    border: 4px solid;
+    border-radius: 5px;
+    border-color: rgba(235,72,143,0.5)
+}
+
+.pink-gradient {
+    height: 400px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    top: 50px;
+    background-image: linear-gradient(to bottom, rgba(25,5,26,0), rgba(25,5,26,1));
+}
+
+.transition-image{
+    position: relative;
+    top: 0px;
+    height: auto;
+    width: 100%;
+}
+
+.bottom-image{
+    position: absolute;
+}
+
+.border-neon-purple {
+    border-top: 2px solid rgba(138,43,163,1); 
+    border-bottom: 2px solid rgba(138,43,163,1); 
+    box-shadow: 0 0 10px 5px rgba(138,43,163,0.5)
+}

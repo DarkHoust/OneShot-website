@@ -1,105 +1,188 @@
-<html>
-    <head>
-        <meta charset="UTF-8"> 
-        <title>OneShot</title>
-        <link rel="stylesheet" href="css.css"> 
-        <link rel="icon" type="image/png" href="../Image/lamp-icon.png">
-    </head>
+<!doctype html>
+<html lang="en">
 
-    <body>
-        <iframe src="../sound/BGM Happily Ever After.mp3" id="audio" allow="autoplay" style="display: none;" ></iframe>
-        
-        <audio id="player" autoplay loop>
-            <source src="../sound/BGM Happily Ever After.mp3" type="audio/mp3">
-        </audio>
-    
-        <!--I'm so confused, it's not autoplaying sound. I suppose it's disabled by Chrome -->
-        <header>
-            <nav>
-                <div class="logo">
-                    <img src="../Image/background.jpg" height:1000px;>
-                </div>
-            </nav>
-        
-            <hr class="line">
-    
-            <div style="text-align: center; ">
-                <div class="description-text"> 
-                    <p>
-                    <span><strong>OneShot</strong></span> is a top down Puzzle/Adventure game with unique gameplay <br>
-                    capabilites. You, as the player, must guide Niko through a mysterious <br>
-                    world, utilizing items, characters, and the enviroment to progress. <br>
-                    <br>
-                    The Life of a lost child and the fate of a steadly decaying world hang <br>
-                    in the <em>balance</em>... and not everyone is interested in preserving them.
-                    </p>
-                </div>
-            </div>  
-        </header>
-        
-        <main>
-            <div class = "trailer-text"><h1>Trailer</h1></div>
-        
-            <hr class="line"> 
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>OneShot</title>
+  <link rel="stylesheet" href="home.css"> 
+  <link rel="icon" type="image/png" href="../Image/lamp-icon.png">
 
-            <div class="trailer-content">
-                <div class="store-link">
-                    <ol style="list-style-type: none;">
-                        <ul style="list-style-type: none;">
-                            <p style="color: white; font-weight: bold;">Aviable On</p>
-        
-                            <li> 
-                                <a style="text-decoration: none;" href="https://store.steampowered.com/app/420530/OneShot/">
-                                    <img class="link-icon-steam" src="../Image/steamlogo.png">
-                                    <br>
-                                    <p style="color: white;">Steam</p>
-                                </a>
-                            </li>
-        
-                            <li> 
-                                <a style="text-decoration: none;" href="https://store.playstation.com/ru-ua/product/EP3919-CUSA34846_00-ONESHOTWMEEU0000">
-                                    <img class="link-icon-playstation" src="../Image/psstorelogo.png">
-                                    <br>
-                                    <p style="color: white;">PS Store</p>
-                                </a>
-                            </li>
-        
-                            <li> 
-                                <a style="text-decoration: none;" href="https://www.nintendo.com/store/products/oneshot-world-machine-edition-switch/">
-                                    <img class="link-icon-nintendo" src="../Image/nintendologo.png">
-                                    <br>
-                                    <p style="color: white;">Nintendo</p>
-                                </a>
-                            </li>
-        
-                            <li> 
-                                <a style="text-decoration: none;" href="https://www.xbox.com/ru-RU/games/store/oneshot-world-machine-edition/9MX3GWKZHVTX">
-                                    <img class="link-icon-xbox" src="../Image/xboxlogo.png">
-                                    <br>
-                                    <p style="color: white;">Xbox</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </ol>
-                </div>
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+  <header class="bg-black">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary bg-black mb-2" style="z-index: 2; border-bottom: 4px solid rgba(235,72,143,0.5); box-shadow: 0 0 10px rgba(235,72,143,0.5)">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="../Image/lamp-icon.png" alt="OneShot" width="40"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="RequirementPage.html">Requirement</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Links
+                </a>
+                <ul class="dropdown-menu bg-black m-1" style="border: 2px solid rgba(235,72,143,0.5); box-shadow: 0 0 10px 5px rgba(235,72,143,0.5)">
+                  <li><a class="dropdown-item text-white" href="main.html">Home</a></li>
+                  <li><a class="dropdown-item text-white" href="#">Shop</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-white" href="#">Merchs</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container-fluid px-0 bg-black">
+        <div class="container-fluid p-0 m-0 bg-black row">
+            <div class="row justify-content-center">
+              <img class="col-8 p-5  bg-black row " src="../Image/logo-text.png">
+            </div>
             
-                <div class="trailer-video">
-                    <iframe width="720" height="421,88" src="https://www.youtube.com/embed/ctYNBd6t4-g" frameborder = "0">
-                    </iframe>
+            <p class="col-lg-8 col-12 container-fluid col-12 text-white text-center fs-5 mx-md-auto mx-2 glow-effect">
+                <span><strong>OneShot</strong></span> is a top down Puzzle/Adventure game with unique gameplay
+                capabilites. You, as the player, must guide Niko through a mysterious
+                world, utilizing items, characters, and the enviroment to progress.
+                <br>
+                <br>
+                The Life of a lost child and the fate of a steadly decaying world hang 
+                in the <em>balance</em>... and not everyone is interested in preserving them.
+            </p>
+        </div>
+
+        <div class="container-fluid row mt-5 bg-black mb-5 d-flex justify-content-center ms-1 align-items-center">
+          <div class="trailer-video ratio ratio-16x9 mt-5" style="box-shadow: 0 0 20px 4px rgba(235,72,143,0.5)">
+            <iframe src="https://www.youtube.com/embed/ctYNBd6t4-g" class="p-0">
+            </iframe>
+          </div>
+
+          <div class="ms-1">
+            <div class="container-fluid store-link row d-flex text-center justify-content-center mt-5 ms-0 ps-0 mb-2" style="box-shadow: 0 0 20px 4px rgba(235,72,143,0.5)">
+                <div class="col-12 my-2">
+                  <p class="col-12 fs-3 glow-effect" style="color: white; font-weight: bold;">Aviable On</p>
                 </div>
-            </div>
-        </main>
+                
 
-        
-        <footer>
-            <div class="pink-gradient"></div>
-            <div style="width: 100%;">
-                <img class="transition-image" src="../Image/Cg_red.png">  
-            </div>
+                <div class="col-3">
+                  <a class="text-center" style="text-decoration: none;" href="https://store.steampowered.com/app/420530/OneShot/">
+                    <img class="link-icon-steam" src="../Image/steamlogo.png" width="50">
+                    <br>
+                    <p class="mt-2" style="color: white;">Steam</p>
+                  </a>
+                </div>
+                
+                <div class="col-3">
+                  <a class="text-center justify-content-center" style="text-decoration: none;" href="https://store.playstation.com/ru-ua/product/EP3919-CUSA34846_00-ONESHOTWMEEU0000">
+                    <img class="link-icon-playstation" src="../Image/psstorelogo.png" width="50">
+                    <br>
+                    <p class="mt-2" style="color: white;">PS Store</p>
+                </a>
+                </div>
+                
+                <div class="col-3">
+                  <a class="text-center" style="text-decoration: none;" href="https://www.nintendo.com/store/products/oneshot-world-machine-edition-switch/">
+                    <img class="link-icon-nintendo" src="../Image/nintendologo.png" width="50">
+                    <br>
+                    <p class="mt-2" style="color: white;">Nintendo</p>
+                </a>
+                </div>
+                
+                <div class="col-3">
+                  <a class="text-center" style="text-decoration: none;" href="https://www.xbox.com/ru-RU/games/store/oneshot-world-machine-edition/9MX3GWKZHVTX">
+                    <img class="link-icon-xbox" src="../Image/xboxlogo.png" width="50">
+                    <br>
+                    <p class="mt-2" style="color: white;">Xbox</p>
+                  </a>
+                </div>
+              </div>
+          </div>
+        </div>
 
-            <div class="link-to-requirement">
-                <a href="RequirementPage.html">System Requirement</a>
+        <div class="mt-5 border-neon-purple">
+          <div>
+            <p class="text-white text-center fs-3 glow-effect mt-3">
+              Gallery
+            </p>
+          </div>
+          <div id="carouselExample" class="carousel slide" style="border-top: 2px solid rgba(138,43,163,1); box-shadow: 0 0 10px 5px rgba(138,43,163,0.5)">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="../Image/1.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/2.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/3.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/4.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/5.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/6.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/7.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/8.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/10.jpg">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../Image/11.jpg">
+              </div>
             </div>
-        </footer>
-    </body>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="row bg-black px-0 mx-0  bottom-100 align-bottom">
+    <div>
+      <img class="img-fluid" src="../Image/de78wz6-8306dd9f-52f7-4ea1-8c44-afdf53a3fab5.png">
+    </div>
+    
+  </footer>
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>

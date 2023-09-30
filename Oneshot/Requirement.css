@@ -8,21 +8,6 @@ html{
     overflow-x: hidden;
 }
 
-#requirements {
-    border: 1px solid black;
-    margin: 0 auto;
-    width: 80%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-#requirements table {
-    width: 100%;
-}
-
 #requirements th, #requirements td {
     padding: 10px;
     border: 1px solid #ddd;
