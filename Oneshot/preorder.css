@@ -1,7 +1,19 @@
 body {
     background-image:url('../Image/de78wz6-8306dd9f-52f7-4ea1-8c44-afdf53a3fab5.png');
-    background-size: 25%;
+    background-size: 100%;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
   }
+
+*{
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+html{
+  backdrop-filter: blur(5px);
+}
 
 label{
   color: white;
