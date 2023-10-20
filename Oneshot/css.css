@@ -4,6 +4,10 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+#countdown{
+    font-family: 'Courier New', Courier, monospace;
+}
+
 html {
     overflow-x: hidden;
     max-width: 100%;
