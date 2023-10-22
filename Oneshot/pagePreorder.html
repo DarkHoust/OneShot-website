@@ -13,9 +13,8 @@
 
   <div class="row">
 
-    <!-- Левая часть страницы -->
     <div class="col-lg-4 col-md-6">
-      
+
       <h1 class="mt-2 text-light">Game pre-order</h1>
 
       <form action="/order" method="post">
@@ -37,7 +36,7 @@
 
         <div class="form-group">
           <label for="name">First and last name</label>
-          <input type="text" class="form-control" id="name" placeholder="Adolf Hitler">
+          <input type="text" class "form-control" id="name" placeholder="Adolf Hitler">
         </div>
 
         <div class="form-group">
@@ -56,13 +55,11 @@
         </div>
 
         <div class="text-center">
-          <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-danger" id="btnPreOrder">
             Pre-order
           </button>
         </div>
-        
 
-        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -72,7 +69,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                Your launcher will be sent in your mail!
+                Your launcher will be sent to your email!
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -80,35 +77,54 @@
             </div>
           </div>
         </div>
-    
+
       </form>
 
     </div>
 
-    <!-- Правая часть страницы -->
     <div class="col-lg-8 col-md-6 mt-lg-5">
       <div class="card bg-dark mt-3">
         <img src="../Image/header.jpg" class="card-img-top" alt="Игра">
         <div class="card-body">
           <h5 class="card-title text-light">OneShot</h5>
-          <p class="card-text text-light">OneShot is a top down Puzzle/Adventure game with unique gameplay capabilites. You, as the player, must guide Niko through a mysterious world, utilizing items, characters, and the enviroment to progress.
+          <p class="card-text text-light">OneShot is a top-down Puzzle/Adventure game with unique gameplay capabilities. You, as the player, must guide Niko through a mysterious world, utilizing items, characters, and the environment to progress.
             <br>
-            The Life of a lost child and the fate of a steadly decaying world hang in the balance... and not everyone is interested in preserving them.</p>
+            The life of a lost child and the fate of a steadily decaying world hang in the balance, and not everyone is interested in preserving them.</p>
           <p class="card-text text-light">Price: <b>2030 tenge</b></p>
         </div>
       </div>
-
     </div>
-
   </div>
-
 </div>
 
-<div class="col-12">
-  <br>
-  <br>
-  <br>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var preOrderButton = document.getElementById('btnPreOrder');
+
+    preOrderButton.addEventListener('click', function () {
+      var cardNumber = document.getElementById('card-number').value;
+      var cardExpiry = document.getElementById('card-expiry').value;
+      var cardCVV = document.getElementById('card-cvv').value;
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var city = document.getElementById('city').value;
+      var zip = document.getElementById('zip').value;
+
+      if (!cardNumber || !cardExpiry || !cardCVV || !name || !email || !city || !zip) {
+        alert('Please fill in all the required fields');
+      } else if (!/^\d{4}-\d{4}-\d{4}-\d{4}$/.test(cardNumber)) {
+        alert('Invalid card number. Please use the format 1234-5678-9012-3456');
+      } else if (!/^\d{2}\/\d{2}$/.test(cardExpiry)) {
+        alert('Invalid card expiry date. Please use the format MM/YY');
+      } else if (!/^\d{3}$/.test(cardCVV)) {
+        alert('Invalid CVV. Please use a 3-digit number');
+      } else {
+        var successModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        successModal.show();
+      }
+    });
+  });
+</script>
+
 </body>
-
 </html>
