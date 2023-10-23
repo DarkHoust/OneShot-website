@@ -65,3 +65,26 @@ html{
     border-bottom: 2px solid rgba(138,43,163,1); 
     box-shadow: 0 0 10px 5px rgba(138,43,163,0.5)
 }
+
+
+
+.btn-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #000000;
+    border-radius: 50%;
+    z-index: 9999;
+
+    .bi-arrow-up {
+        font-size: 20px;
+        color: #000;
+    }
+}
+
+
+.btn-to-top img {
+    z-index: 10000;
+}
