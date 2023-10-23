@@ -36,7 +36,7 @@
 
         <div class="form-group">
           <label for="name">First and last name</label>
-          <input type="text" class "form-control" id="name" placeholder="Adolf Hitler">
+          <input type="text" class="form-control" id="name" placeholder="Adolf Hitler">
         </div>
 
         <div class="form-group">
@@ -119,8 +119,17 @@
       } else if (!/^\d{3}$/.test(cardCVV)) {
         alert('Invalid CVV. Please use a 3-digit number');
       } else {
-        var successModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        successModal.show();
+        let randomNumber1 = Math.floor(Math.random() * 10 + 1);
+        let randomNumber2 = Math.floor(Math.random() * 10 + 1);
+        let input = prompt("Are you sure? Solve this problem: " + randomNumber1 + " + " + randomNumber2)
+        if (input == (randomNumber1 + randomNumber2)){
+          var successModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+          successModal.show();
+          alert("Success! Your game licence will be sent to email.")
+        } else {
+          alert("Not correct! Try again")
+        }
+        
       }
     });
   });
