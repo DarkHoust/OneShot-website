@@ -52,3 +52,4 @@ showSlide(currentSlideIndex);
 document.getElementById('prevBtn').addEventListener('click', previousSlide);
 document.getElementById('nextBtn').addEventListener('click', nextSlide);
 
+setInterval(nextSlide, 5000);
