@@ -52,4 +52,23 @@ showSlide(currentSlideIndex);
 document.getElementById('prevBtn').addEventListener('click', previousSlide);
 document.getElementById('nextBtn').addEventListener('click', nextSlide);
 
+
+
+const btnToTop = document.querySelector(".btn-to-top");
+
+// Функция, которая будет прокручивать страницу вверх
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+    });
+}
+
+// Клик по кнопке "Наверх"
+btnToTop.addEventListener("click", scrollToTop);
+
+
+
 setInterval(nextSlide, 5000);
+
+
