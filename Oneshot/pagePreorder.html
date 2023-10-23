@@ -151,8 +151,6 @@
         let randomNumber2 = Math.floor(Math.random() * 10 + 1);
         let input = prompt("Are you sure? Solve this problem: " + randomNumber1 + " + " + randomNumber2)
         if (input == (randomNumber1 + randomNumber2)){
-          var successModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-          successModal.show();
           alert("Success! Your game licence will be sent to email.")
         } else {
           alert("Not correct! Try again")
