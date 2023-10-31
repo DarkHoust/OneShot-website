@@ -18,9 +18,12 @@
         <nav class="navbar-dark">
             <div class="d-flex">
                 <button class="btn d-lg-none d-sm-flex d-md-flex mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon"></span></button>
-                <div class="container-fluid text-center mt-4 navbar-brand">
-                    <img id="lamp-logo" class="img-center me-5 pe-4 me-lg-0 pe-lg-0" src="../Image/lamp-icon.png" alt="OneShot" width="50"></a>
+
+                <div class="container-fluid text-center mt-4 navbar-brand ms-lg-4">
+                    <img id="lamp-logo" class="img-center ms-1 me-lg-0 ms-lg-5 pe-lg-0" src="../Image/lamp-icon.png" alt="OneShot" width="50"></a>
                 </div>
+
+                <button class="btn mt-4 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart"><img src="../Image/cart-icon.png" width="30"></button>
             </div>
             
             <div class="d-lg-none d-md-flex d-sm-block d-block">
@@ -51,8 +54,33 @@
                             </div>
                         </p>
                     </div>
+                </div>
             </div>
-        </div>
+
+            <div class="offcanvas offcanvas-end bg-black mw-50 w-100" data-bs-scroll="true" tabindex="-1" id="offcanvas-cart" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-white" id="offcanvasWithBothOptionsLabel">SHOPING CART</h5>
+                    <button type="button" class="btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-white text-center">
+                    <div class="basket">
+                        <p>Add something to your cart.</p>
+                    </div>
+                    
+                </div>
+                <div class="subtotal">
+                    <p class=" text-white text-center" style="font-size: 10px;">SUBTOTAL</p>
+                </div>
+                <div class="total-price">
+                    <p class="fs-3 text-center text-white">$ 0.00</p>
+                </div>
+                <div class="offcanvas-footer text-center mb-4 bg-black">
+                <div class="">
+                    <p class=" text-white text-center" style="font-size: 14px;">Taxes and shippings calculated at checkout</p>
+                </div>
+                <button type="button" class="end-100 btn btn-light rounded-5" style="font-weight: bolder;">CHECKOUT</button>
+                </div>
+            </div>
 
         <!-- Easter egg sounds -->
         <audio id="breakSound1" src="../sound/break1.mp3"></audio>
