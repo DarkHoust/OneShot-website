@@ -13,3 +13,25 @@ html{
 .img-center {
     text-align: center;
 }
+
+.item-background {
+    background-color: #1c1c1c;
+    transition:  ease .3s;
+}
+
+.item-background:hover {
+
+}
+
+.merch-item {
+    background-color: transparent;
+    transition: ease .3s;
+}
+
+.merch-item:hover {
+    transform: translate(0, -11px);
+}
+
+.transparent-bg {
+    background-color: transparent;
+}

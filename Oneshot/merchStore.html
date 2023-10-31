@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../Image/lamp-icon.png">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="merchStore.css">
     <title>Merch</title>
     
@@ -17,13 +17,13 @@
     <header class="bg-black">
         <nav class="navbar-dark">
             <div class="d-flex">
-                <button class="btn d-lg-none d-sm-flex d-md-flex mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon"></span></button>
+                <button class="btn d-lg-none d-sm-flex d-md-flex mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="../Image/whiteToogler.png" width="30"></button>
 
                 <div class="container-fluid text-center mt-4 navbar-brand ms-lg-4">
-                    <img id="lamp-logo" class="img-center ms-1 me-lg-0 ms-lg-5 pe-lg-0" src="../Image/lamp-icon.png" alt="OneShot" width="50"></a>
+                    <img id="lamp-logo" class="img-center ms-1 me-lg-0 ms-lg-5 pe-lg-0 " src="../Image/lamp-icon.png" alt="OneShot" width="50"></a>
                 </div>
 
-                <button class="btn mt-4 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart"><img src="../Image/cart-icon.png" width="30"></button>
+                <button class="btn mt-3 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart"><img src="../Image/cart-icon.png" width="30"></button>
             </div>
             
             <div class="d-lg-none d-md-flex d-sm-block d-block">
@@ -68,10 +68,10 @@
                     </div>
                     
                 </div>
-                <div class="subtotal">
+                <div class="subtotal p-0">
                     <p class=" text-white text-center" style="font-size: 10px;">SUBTOTAL</p>
                 </div>
-                <div class="total-price">
+                <div class="total-price text-white text-center fs-3">
                     <p class="fs-3 text-center text-white">$ 0.00</p>
                 </div>
                 <div class="offcanvas-footer text-center mb-4 bg-black">
@@ -89,6 +89,9 @@
 
             <div class="text-center justify-content-center mt-4 d-sm-none d-md-none d-none d-lg-flex">
                 <ul class="mb-2 mb-lg-0 px-4">
+                    <li class="d-inline-block px-4">
+                        <a class="nav-link text-white" href="main.html">Home</a>
+                    </li>
                     <li class="d-inline-block px-4">
                         <a class="nav-link text-white" href="main.html#trailer-video">Trailer</a>
                     </li>
@@ -108,42 +111,151 @@
 
     <!-- Main catalouge -->
     <main>
-        <div class="container-fluid row text-center mt-5">
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/blackcloverpendantitemview_720x720.webp" width="300">
+        <div class="img-fluid container-fluid row text-center mt-5">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/1.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Black Clover Pendant <br>
+                        $ 36.00
+                    </p>
+                    <button type="button" onclick="addToCart('Black Clover Pendant', 36.00)" class="add-to-cart btn btn-light rounded-circle float-end ms-4 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
+                
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_vinyl_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/12.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="product-info text-center text-white mt-3 ms-5 ps-2">
+                        OneShot Vynil <br>
+                        $ 39.00
+                    </p>
+                    <button type="button" onclick="addToCart('OneShot Vynil', 39.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_stickersheet_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/11.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Niko Sticker Sheet <br>
+                        $ 9.00
+                    </p>
+                    <button type="button" onclick="addToCart('Niko Sticker Sheet', 9.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_pin_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/8.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        The Sun Pin <br>
+                        $ 10.00
+                    </p>
+                    <button type="button" onclick="addToCart('The Sun Pin', 10.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_solstice_pinset_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/9.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Solstice Pin Set <br>
+                        $ 17.00
+                    </p>
+                    <button type="button" onclick="addToCart('Solstice Pin Set', 17.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_alula_plush_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/2.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Alula Plush <br>
+                        $ 32.00
+                    </p>
+                    <button type="button" onclick="addToCart('Alula Plush', 32.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_journal_pin_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/3.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        The Journal Pin <br>
+                        $ 12.00
+                    </p>
+                    <button type="button" onclick="addToCart('The Journal Pin', 12.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_niko___friends_tote_bag_itemview_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/4.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Niko Tote Bag <br>
+                    $ 24.00
+                    </p>
+                    <button type="button" onclick="addToCart('Niko Tote Bag', 24.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_niko_mug_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/5.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-5 me-4">
+                        Niko Mug <br>
+                        $ 28.00
+                    </p>
+                    <button type="button" onclick="addToCart('Niko Mug', 28.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_stationery_set_itemview_new_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/10.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Stationary Set <br>
+                    $ 26.00
+                    </p>
+                    <button type="button" onclick="addToCart('Stationary Set', 26.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_world_machine_pin_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/13.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        World Machine Pin <br>
+                        $ 12.00
+                    </p>
+                    <button type="button" onclick="addToCart('World Machine Pin', 12.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_niko_pin_itemview_new_720x720.webp" width="300">
+            <div class="product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/6.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-5 me-4">
+                        Niko Pin <br>
+                    $ 10.00
+                    </p>
+                    <button type="button"onclick="addToCart('Niko Pin', 10.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
         </div>
     </main>
