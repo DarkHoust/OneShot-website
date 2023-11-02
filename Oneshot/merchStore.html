@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../Image/lamp-icon.png">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="merchStore.css">
     <title>Merch</title>
     
@@ -17,13 +17,16 @@
     <header class="bg-black">
         <nav class="navbar-dark">
             <div class="d-flex">
-                <button class="btn d-lg-none d-sm-flex d-md-flex mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span class="navbar-toggler-icon"></span></button>
-                <div class="container-fluid text-center mt-4 navbar-brand">
-                    <img id="lamp-logo" class="img-center me-5 pe-4 me-lg-0 pe-lg-0" src="../Image/lamp-icon.png" alt="OneShot" width="50"></a>
+                <button class="btn mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="../Image/whiteToogler.png" width="30"></button>
+
+                <div class="container-fluid text-center mt-4 navbar-brand ms-lg-4">
+                    <a href="main.html"><img id="lamp-logo" class="img-center ms-2 me-lg-0 ms-lg-0 pe-lg-0 " src="../Image/lamp-icon.png" alt="OneShot" width="50"></a></a>
                 </div>
+
+                <button class="btn mt-3 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart"><img src="../Image/cart-icon.png" width="30"></button>
             </div>
             
-            <div class="d-lg-none d-md-flex d-sm-block d-block">
+            <div class="d-block">
                 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                     <div class="offcanvas-header bg-black">
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -33,45 +36,70 @@
                             <div class="mt-4">
                                 <ul class="mb-2 mb-lg-0 px-4">
                                     <li class="px-4">
-                                        <a class="nav-link text-white" href="main.html">Home</a>
+                                        <button class="btn btn-dark bg-black border-0 text-white" onclick="window.location.href = 'main.html'">HOME</button>
                                     </li>
                                     <li class="px-4">
-                                    <a class="nav-link text-white" href="main.html#trailer-video">Trailer</a>
+                                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('all')">ALL</button>
                                     </li>
                                     <li class="px-4">
-                                    <a class="nav-link text-white" href="merchStore.html">Store</a>
+                                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('music')">MUSIC</button>
                                     </li>
                                     <li class="px-4">
-                                    <a class="nav-link text-white" href="main.html#Gallery">Gallery</a>
+                                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('accessoires')">ACCESSOIRES</button>
                                     </li>
                                     <li class="px-4">
-                                        <a class="nav-link text-white" href="RequirementPage.html">F.A.Q.</a>
+                                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('other')">OTHER</button>
                                     </li>
                                 </ul>
                             </div>
                         </p>
                     </div>
+                </div>
             </div>
-        </div>
+
+            <div class="offcanvas offcanvas-end bg-black mw-50 w-100" data-bs-scroll="true" tabindex="-1" id="offcanvas-cart" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-white" id="offcanvasWithBothOptionsLabel">SHOPING CART</h5>
+                    <button type="button" class="btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-white text-center">
+                    <div class="basket">
+                        <p>Add something to your cart.</p>
+                    </div>
+                    
+                </div>
+                <div class="subtotal p-0">
+                    <p class=" text-white text-center" style="font-size: 10px;">SUBTOTAL</p>
+                </div>
+                <div class="total-price text-white text-center fs-3">
+                    <p class="fs-3 text-center text-white">$ 0.00</p>
+                </div>
+                <div class="offcanvas-footer text-center mb-4 bg-black">
+                <div class="">
+                    <p class=" text-white text-center" style="font-size: 14px;">Taxes and shippings calculated at checkout</p>
+                </div>
+                <button type="button" class="checkoutBtn end-100 btn btn-light rounded-5" style="font-weight: bolder;">CHECKOUT</button>
+                </div>
+            </div>
 
         <!-- Easter egg sounds -->
         <audio id="breakSound1" src="../sound/break1.mp3"></audio>
         <audio id="breakSound2" src="../sound/break2.mp3"></audio>
         <audio id="breakSound3" src="../sound/break3.mp3"></audio>
 
-            <div class="text-center justify-content-center mt-4 d-sm-none d-md-none d-none d-lg-flex">
-                <ul class="mb-2 mb-lg-0 px-4">
+            <div class="text-center justify-content-center mt-4 mb-0 d-sm-none d-md-none d-none d-lg-flex">
+                <ul class="mb-0 p-0 mb-lg-0 px-4">
                     <li class="d-inline-block px-4">
-                        <a class="nav-link text-white" href="main.html#trailer-video">Trailer</a>
+                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('all')">ALL</button>
                     </li>
                     <li class="d-inline-block px-4">
-                        <a class="nav-link text-white" href="merchStore.html">Store</a>
+                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('music')">MUSIC</button>
                     </li>
                     <li class="d-inline-block px-4">
-                        <a class="nav-link text-white" href="main.html#Gallery">Gallery</a>
+                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('accessoires')">ACCESSOIRES</button>
                     </li>
                     <li class="d-inline-block px-4">
-                        <a class="nav-link text-white" href="RequirementPage.html">F.A.Q.</a>
+                        <button class="btn btn-dark bg-black border-0 text-white" onclick="filterBy('other')">OTHER</button>
                     </li>
                 </ul>
             </div>
@@ -80,42 +108,151 @@
 
     <!-- Main catalouge -->
     <main>
-        <div class="container-fluid row text-center mt-5">
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/blackcloverpendantitemview_720x720.webp" width="300">
+        <div class="img-fluid container-fluid row text-center mt-3 ms-1">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/1.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Black Clover Pendant <br>
+                        <span class="product-price" data-price="36.00">$ 36.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Black Clover Pendant', 36.00)" class="add-to-cart btn btn-light rounded-circle float-end ms-4 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
+                
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_vinyl_itemview_new_720x720.webp" width="300">
+            <div class="filter music product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/12.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="product-info text-center text-white mt-3 ms-5 ps-2">
+                        OneShot Vynil <br>
+                        <span class="product-price" data-price="39.00">$ 39.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('OneShot Vynil', 39.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_stickersheet_itemview_new_720x720.webp" width="300">
+            <div class="filter other product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/11.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Niko Sticker Sheet <br>
+                        <span class="product-price" data-price="9.00">$ 9.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Niko Sticker Sheet', 9.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_pin_itemview_new_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/8.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        The Sun Pin <br>
+                        <span class="product-price" data-price="10.00">$ 10.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('The Sun Pin', 10.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_solstice_pinset_itemview_new_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/9.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Solstice Pin Set <br>
+                        <span class="product-price" data-price="17.00">$ 17.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Solstice Pin Set', 17.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_alula_plush_itemview_new_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/2.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Alula Plush <br>
+                        <span class="product-price" data-price="32.00">$ 32.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Alula Plush', 32.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_journal_pin_itemview_new_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/3.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        The Journal Pin <br>
+                        <span class="product-price" data-price="12.00">$ 12.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('The Journal Pin', 12.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_niko___friends_tote_bag_itemview_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/4.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Niko Tote Bag <br>
+                        <span class="product-price" data-price="24.00">$ 24.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Niko Tote Bag', 24.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_niko_mug_itemview_new_720x720.webp" width="300">
+            <div class="filter other product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/5.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-5 me-4">
+                        Niko Mug <br>
+                        <span class="product-price" data-price="28.00">$ 28.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Niko Mug', 28.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_stationery_set_itemview_new_new_720x720.webp" width="300">
+            <div class="filter other product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/10.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        Stationary Set <br>
+                        <span class="product-price" data-price="26.00">$ 26.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('Stationary Set', 26.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_world_machine_pin_itemview_new_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/13.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-2">
+                        World Machine Pin <br>
+                        <span class="product-price" data-price="12.00">$ 12.00</span>
+                    </p>
+                    <button type="button" onclick="addToCart('World Machine Pin', 12.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
-            <div class="img-fluid col-xl-3 col-12 p-2">
-                <img src="../Image/merchs/product_oneshot_niko_pin_itemview_new_720x720.webp" width="300">
+            <div class="filter accessoires product img-fluid col-xl-3 col-12 p-2 col-lg-4 col-md-6">
+                <div class="item-background rounded-4">
+                    <img class="merch-item" src="../Image/merchs/6.webp" width="300">
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                    <p class="text-center text-white mt-3 ms-5 ps-5 me-4">
+                        Niko Pin <br>
+                        <span class="product-price" data-price="10.00">$ 10.00</span>
+                    </p>
+                    <button type="button"onclick="addToCart('Niko Pin', 10.00)" class="add-to-cart btn btn-light rounded-circle text-end ms-5 h-25 align-self-center"><img class="transparent-bg" src="../Image/plus-black-symbol.png" alt="+" width="12"></button>
+                </div>
             </div>
         </div>
     </main>

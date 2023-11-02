@@ -13,3 +13,69 @@ html{
 .img-center {
     text-align: center;
 }
+
+.item-background {
+    background-color: #1c1c1c;
+    transition:  ease .3s;
+}
+
+.item-background:hover {
+
+}
+
+.merch-item {
+    background-color: transparent;
+    transition: ease .3s;
+}
+
+.merch-item:hover {
+    transform: translate(0, -11px);
+}
+
+.transparent-bg {
+    background-color: transparent;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate(-1px, 0);
+    }
+    20%, 90% {
+        transform: translate(-2px, 0);
+    }
+    30%,50%,70% {
+        transform: translate(-4px,0);
+    }
+    40%, 60% {
+        transform: translate(4px,0);
+    }
+}
+
+/* Press button effect */
+.add-to-cart {
+    transition: .3s ease;
+}
+
+.add-to-cart:active {
+    transform: scale(0.90);
+}
+
+.press-effect {
+    transform: .3s ease;
+}
+
+.press-effect:active{
+    transform: scale(0.90);
+}
+
+.checkoutBtn {
+    transition: .3s ease;
+}
+
+.checkoutBtn:active {
+    transform: scale(0.90);
+}
+
+.hidden {
+    display: none;
+}
