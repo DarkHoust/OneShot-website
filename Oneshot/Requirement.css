@@ -22,3 +22,7 @@ html{
 section {
     margin-bottom: 50px;
 }
+
+#lamp-logo{
+    filter: drop-shadow(0 0 5px black);
+}
