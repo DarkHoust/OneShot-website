@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 1px solid red;
+            box-shadow: 0px 0px 10px 2px red;
+        }
+        .btn-register {
+            background-color: red;
+            border-color: red;
+        }
+        .btn-login {
+            background-color: orange;
+            border-color: orange;
+        }
+        .btn-danger, .btn-warning {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Registration Form -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Registration</h2>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="registerUsername">Username:</label>
+                                <input type="text" class="form-control" id="registerUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password:</label>
+                                <input type="password" class="form-control" id="registerPassword" required>
+                            </div>
+                            <button type="button" class="btn btn-register" onclick="register()">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Login Form -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Login</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginUsername">Username:</label>
+                                <input type="text" class="form-control" id="loginUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password:</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <button type="button" class="btn btn-login" onclick="login()">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jsindex.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
