@@ -1,69 +1,61 @@
-// Функция для отображения пользователей и кнопок управления
+// Функция для отображения пользователей и кнопок удаления и изменения
 function displayUsers() {
     const usersListElement = document.getElementById('usersList');
-    usersListElement.innerHTML = '';
+    usersListElement.innerHTML = ''; // Очистка списка перед добавлением обновленных данных
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
     users.forEach((user, index) => {
-        // Создаем элемент списка для пользователя
         const userItem = document.createElement('li');
         userItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
         userItem.textContent = user.email;
 
-        // Создаем кнопку Delete
+        // Контейнер для кнопок
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.classList.add('btn-group');
+
+        // Кнопка Delete
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.classList.add('btn', 'btn-danger', 'btn-sm');
         deleteBtn.onclick = function() { deleteUser(index); };
-        userItem.appendChild(deleteBtn);
+        buttonsContainer.appendChild(deleteBtn);
 
-        // Создаем кнопку Change
+        // Кнопка Change
         const changeBtn = document.createElement('button');
         changeBtn.textContent = 'Change';
-        changeBtn.classList.add('btn', 'btn-primary', 'btn-sm', 'mx-2');
-        changeBtn.onclick = function() { showChangePasswordForm(user.email, index); };
-        userItem.appendChild(changeBtn);
+        changeBtn.classList.add('btn', 'btn-primary', 'btn-sm');
+        changeBtn.onclick = function() { changeUserPassword(index); };
+        buttonsContainer.appendChild(changeBtn);
+
+        // Добавляем контейнер с кнопками к элементу списка
+        userItem.appendChild(buttonsContainer);
 
         // Добавляем элемент списка на страницу
         usersListElement.appendChild(userItem);
     });
 }
 
-
 // Функция для удаления пользователя
 function deleteUser(index) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    users.splice(index, 1);
-    localStorage.setItem('users', JSON.stringify(users));
-    displayUsers();
+    users.splice(index, 1); // Удаление пользователя из массива
+    localStorage.setItem('users', JSON.stringify(users)); // Обновление localStorage
+    displayUsers(); // Обновление отображаемого списка
 }
 
-// Функция для отображения формы изменения пароля
-function showChangePasswordForm(email, index) {
-    // Показываем форму и заполняем информацию о пользователе
-    document.getElementById('passwordChangeCard').style.display = 'block';
-    document.getElementById('userEmail').textContent = `Change password for ${email}`;
-    document.getElementById('userIndex').value = index;
-}
-
-// Обработка формы изменения пароля
-document.getElementById('passwordChangeForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращаем стандартное поведение формы
-
-    const index = document.getElementById('userIndex').value;
-    const newPassword = document.getElementById('newPasswordInput').value;
-    changeUserPassword(index, newPassword);
-});
-
-// Функция изменения пароля пользователя
-function changeUserPassword(index, newPassword) {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    // Здесь должна быть проверка на безопасность пароля, но для примера пропускаем
-    users[index].password = newPassword; // Изменяем пароль
-    localStorage.setItem('users', JSON.stringify(users)); // Обновляем localStorage
-    displayUsers(); // Обновляем список пользователей
-    alert('Password changed successfully.'); // Уведомляем об успешном изменении
-    document.getElementById('passwordChangeCard').style.display = 'none'; // Скрываем форму
+// Функция для изменения пароля пользователя
+function changeUserPassword(index) {
+    // Здесь вы можете добавить логику для изменения пароля пользователя
+    // Например, показать модальное окно, чтобы администратор мог ввести новый пароль
+    console.log('Changing password for user at index:', index);
+    // Допустим, мы просто запрашиваем новый пароль через prompt
+    const newPassword = prompt('Enter new password:');
+    if (newPassword) {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        users[index].password = newPassword; // Предполагаемая структура объекта пользователя с полем password
+        localStorage.setItem('users', JSON.stringify(users)); // Обновление localStorage с новым паролем
+        displayUsers(); // Обновление отображаемого списка
+    }
 }
 
 // При загрузке страницы отображаем пользователей
