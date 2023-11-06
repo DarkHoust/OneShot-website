@@ -41,13 +41,19 @@ document.getElementById('adminRegisterForm').addEventListener('submit', function
     const registerPassword = document.getElementById('registerPasswordInput').value;
     const confirmPassword = document.getElementById('confirmPasswordInput').value;
 
+    // Валидация пароля
+    if (!validatePassword(registerPassword)) {
+        alert('Password must contain at least one digit, one special character and be at least 8 characters long.');
+        return;
+    }
+
     // Проверка на совпадение паролей
     if (registerPassword !== confirmPassword) {
         alert('Passwords do not match.');
         return;
     }
 
-
+    // Проверка, существует ли уже пользователь с таким email
     const isUserExist = users.some(user => user.email === registerEmail);
 
     if (isUserExist) {
@@ -55,17 +61,25 @@ document.getElementById('adminRegisterForm').addEventListener('submit', function
         return;
     }
 
-
+    // Добавление нового пользователя
     users.push({
         email: registerEmail,
         password: registerPassword
     });
 
-
+    // Сохранение пользователей в localStorage
     localStorage.setItem('users', JSON.stringify(users));
 
-
+    // Сброс формы
     document.getElementById('adminRegisterForm').reset();
 
     alert('Registration successful!');
 });
+
+// Функция для валидации пароля
+function validatePassword(password) {
+    // Регулярное выражение для проверки пароля
+    const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return passwordRegex.test(password);
+}
+
