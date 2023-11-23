@@ -37,7 +37,7 @@ function addItemToCart(productName, productPrice) {
 function updateSubtotal() {
     let subtotal = 0;
     for (const item of shoppingCart) {
-        subtotal += item.price;
+        subtotal += item.price * item.qty;
     }
     return subtotal;
 }
@@ -52,6 +52,7 @@ function removeItemFromCart(product) {
     if (index !== -1) {
         shoppingCart.splice(index, 1);
         displayCart();
+        updateSubtotal();
     }
 }
 
@@ -60,6 +61,7 @@ function increaseQuantity(product) {
     if (index !== -1) {
         shoppingCart[index].qty++;
         displayCart();
+        updateSubtotal();
     }
 }
 
@@ -71,6 +73,7 @@ function decreaseQuantity(product) {
             shoppingCart.splice(index, 1);
         }
         displayCart();
+        updateSubtotal();
     }
 }
 
@@ -135,3 +138,6 @@ function filterBy(option){
         }
     }
 }
+
+//Counter of cart items
+
