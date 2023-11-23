@@ -19,12 +19,15 @@
             <div class="d-flex">
                 <button class="btn mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="../Image/whiteToogler.png" width="30"></button>
 
-                <div class="container-fluid text-center mt-4 navbar-brand ms-lg-4">
+                <div class="container-fluid text-center mt-4 navbar-brand ms-lg-4 ms-4">
                     <a href="main.html"><img id="lamp-logo" class="img-center ms-2 me-lg-0 ms-lg-0 pe-lg-0 " src="../Image/lamp-icon.png" alt="OneShot" width="50"></a></a>
                 </div>
 
 
-                <button class="btn mt-3 me-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart"><img src="../Image/cart-icon.png" width="30"></button>
+                <button class="btn mt-3 me-4 d-inline-flex" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart">
+                    <img class="img-fluid me-lg-0 me-md-0 me-3"  style="min-width: 50px;" src="../Image/cart-icon.png" width="50px">
+                    <p class="numberOfItems text-center position-absolute bg-transparent fw-bolder" style="font-size: 14px; display: none; top: 35px; right: 38px;">0</p>
+                </button>
             </div>
             
             <div class="d-block">
@@ -61,7 +64,7 @@
             <div class="offcanvas offcanvas-end bg-black mw-50 w-100" data-bs-scroll="true" tabindex="-1" id="offcanvas-cart" aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title text-white" id="offcanvasWithBothOptionsLabel">SHOPING CART</h5>
-                    <button type="button" class="btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../Image/cancelWhite.png" alt="" width="30"></button>
                 </div>
                 <div class="offcanvas-body text-white text-center">
                     <div class="basket">

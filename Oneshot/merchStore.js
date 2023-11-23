@@ -22,18 +22,27 @@
 
 //Storage of products at cart.
 var shoppingCart = [];
+counterOfCartItems();
 
+//Adding item to cart.
 function addItemToCart(productName, productPrice) {
     const item = {
         name: productName,
         price: productPrice,
         qty: 1
     };
-    shoppingCart.push(item);
+
+    const existingItem = shoppingCart.find(existingItem => existingItem.name === item.name);
+
+    if (existingItem) {
+        existingItem.qty++;
+    } else {
+        shoppingCart.push(item);
+    }
 }
 
-// Function to update the shopping cart's subtotal.
 
+// Function to update the shopping cart's subtotal.
 function updateSubtotal() {
     let subtotal = 0;
     for (const item of shoppingCart) {
@@ -45,6 +54,7 @@ function updateSubtotal() {
 function addToCart(productName, productPrice) {
     addItemToCart(productName, productPrice);
     displayCart();
+    counterOfCartItems()
 }
 
 function removeItemFromCart(product) {
@@ -53,6 +63,7 @@ function removeItemFromCart(product) {
         shoppingCart.splice(index, 1);
         displayCart();
         updateSubtotal();
+        counterOfCartItems();
     }
 }
 
@@ -62,6 +73,7 @@ function increaseQuantity(product) {
         shoppingCart[index].qty++;
         displayCart();
         updateSubtotal();
+        counterOfCartItems();
     }
 }
 
@@ -74,6 +86,7 @@ function decreaseQuantity(product) {
         }
         displayCart();
         updateSubtotal();
+        counterOfCartItems();
     }
 }
 
@@ -116,6 +129,7 @@ function displayCart() {
     const subtotal = updateSubtotal();
     const subtotalElement = document.querySelector('.total-price');
     subtotalElement.textContent = `$ ${subtotal.toFixed(2)}`;
+    counterOfCartItems();
 }
 
 //Filter functionality
@@ -140,4 +154,29 @@ function filterBy(option){
 }
 
 //Counter of cart items
+function counterOfCartItems() {
+    var counter = document.querySelector('.numberOfItems');
+    var sum = 0;
+    for (const item of shoppingCart) {
+        sum += item.qty;
+    }
+
+    if (sum == 0){
+        counter.style.display = 'none';
+    } else {
+        if (Math.floor(sum / 10) == 0){
+            counter.style.right = '42px' // Make it look more centered
+        } else {
+            counter.style.right = '38px'
+        }
+        counter.style.display = 'block';
+    }
+
+    if (sum >= 100) {
+        counter.innerHTML = '+99';
+        counter.style.right = '35px'
+    } else {
+        counter.innerHTML = sum.toString(); // Convert the sum to a string before setting innerHTML
+    }
+}
 
