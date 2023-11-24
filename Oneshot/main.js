@@ -88,3 +88,60 @@ logoImage.addEventListener('click', () => {
         window.location.href = "jpage.html";
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userStatus = localStorage.getItem('userStatus');
+    const userName = localStorage.getItem('userName');
+    const accountButton = document.getElementById('accountButton');
+    const userNameDisplay = document.getElementById('userName');
+    const userIcon = document.getElementById('userIcon');
+
+    if (userStatus === 'admin') {
+        userNameDisplay.textContent = 'Admin';
+        userIcon.src = '../Image/admin.png'; // Указать путь к иконке админа
+        accountButton.onclick = () => window.location.href = 'adminPage.html';
+    } else if (userStatus === 'user') {
+        userNameDisplay.textContent = userName;
+        userIcon.src = '../Image/user.png'; // Указать путь к иконке пользователя
+        accountButton.onclick = () => window.location.href = 'userPage.html';
+    } else {
+        accountButton.onclick = () => window.location.href = 'admin.html';
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userIcon = document.getElementById('userIcon'); // Убедитесь, что ID вашей иконки пользователя верный
+    const userNameDisplay = document.getElementById('userName'); // Убедитесь, что ID элемента для имени пользователя верный
+
+
+    function updateUserInterface() {
+        const userStatus = localStorage.getItem('userStatus');
+        const userName = localStorage.getItem('userName');
+
+        if (userStatus === 'admin') {
+
+            userNameDisplay.textContent = 'Admin';
+            userIcon.src = '../Image/admin.png';
+            userIcon.onclick = () => window.location.href = 'adminPage.html';
+        } else if (userStatus === 'user') {
+
+            userNameDisplay.textContent = userName;
+            userIcon.src = '../Image/user.png';
+            userIcon.onclick = () => window.location.href = 'userPage.html';
+        } else {
+
+            userNameDisplay.textContent = '';
+            userIcon.src = '../Image/userIcon.png';
+            userIcon.onclick = () => window.location.href = 'admin.html';
+        }
+    }
+
+
+    updateUserInterface();
+});
+
+
+
+
+
+

@@ -42,6 +42,22 @@
     .btn-primary:hover {
       background-color: #660066;
     }
+    .toggle-link {
+      color: #000;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .toggle-link:hover {
+      color: #800080;
+      text-decoration: underline;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+    }
   </style>
 </head>
 
@@ -126,6 +142,9 @@
             <div class="d-grid">
               <button type="submit" class="btn btn-primary">Login</button>
             </div>
+            <p class="mt-3 text-center" id="toggleToRegister">
+              Not registered? <a href="#" class="toggle-link">Register here</a>
+            </p>
           </form>
         </div>
       </div>
@@ -135,29 +154,30 @@
 
 
 
-
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header bg-black text-white">Register</div>
-        <div class="card-body">
-          <form id="adminRegisterForm">
-            <div class="mb-3">
-              <label for="registerEmailInput" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="registerEmailInput" aria-describedby="emailHelp" required>
-            </div>
-            <div class="mb-3">
-              <label for="registerPasswordInput" class="form-label">Password</label>
-              <input type="password" class="form-control" id="registerPasswordInput" required>
-            </div>
-            <div class="mb-3">
-              <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" id="confirmPasswordInput" required>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-          </form>
+  <div class="row justify-content-center mt-4" id="registrationForm" style="display: none;">
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-black text-white">Register</div>
+          <div class="card-body">
+            <form id="adminRegisterForm">
+              <div class="mb-3">
+                <label for="registerEmailInput" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="registerEmailInput" aria-describedby="emailHelp" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerPasswordInput" class="form-label">Password</label>
+                <input type="password" class="form-control" id="registerPasswordInput" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPasswordInput" required>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

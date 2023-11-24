@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <style>
+        #logout-container {
+
+        }
+
+        #logoutButton {
+
+            padding: 10px 20px;
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        #logoutButton:hover {
+            background-color: #c00;
+        }
+    </style>
+</head>
+<body>
+
+<div id="logout-container">
+    <button id="logoutButton">Logout</button>
+</div>
+
+<script>
+
+    document.getElementById('logoutButton').addEventListener('click', function() {
+
+        localStorage.removeItem('userStatus');
+        localStorage.removeItem('userName');
+
+
+        window.location.href = 'admin.html';
+    });
+</script>
+
+</body>
+</html>

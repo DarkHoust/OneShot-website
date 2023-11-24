@@ -20,15 +20,16 @@ document.getElementById('adminLoginForm').addEventListener('submit', function(ev
 
     const isAdminAuthenticated = admins.some(admin => admin.email === email && admin.password === password);
 
-
     const isUserAuthenticated = users.some(user => user.email === email && user.password === password);
 
-
     if (isAdminAuthenticated) {
-        window.location.href = 'adminPage.html';
-    } else if (isUserAuthenticated) {
+        localStorage.setItem('userStatus', 'admin');
+        localStorage.setItem('userName', 'Admin');
         window.location.href = 'main.html';
-        setTimeout(() => alert(`Вы успешно вошли как пользователь ${email}`), 1000);
+    } else if (isUserAuthenticated) {
+        localStorage.setItem('userStatus', 'user');
+        localStorage.setItem('userName', email);
+        window.location.href = 'main.html';
     } else {
         alert('Incorrect email or password. Please try again.');
     }
@@ -41,19 +42,17 @@ document.getElementById('adminRegisterForm').addEventListener('submit', function
     const registerPassword = document.getElementById('registerPasswordInput').value;
     const confirmPassword = document.getElementById('confirmPasswordInput').value;
 
-    // Валидация пароля
     if (!validatePassword(registerPassword)) {
-        alert('Password must contain at least one digit, one special character and be at least 8 characters long.');
+        alert('Password must contain at least one digit, one special character !@#$%^&* and be at least 8 characters long.');
         return;
     }
 
-    // Проверка на совпадение паролей
+
     if (registerPassword !== confirmPassword) {
         alert('Passwords do not match.');
         return;
     }
 
-    // Проверка, существует ли уже пользователь с таким email
     const isUserExist = users.some(user => user.email === registerEmail);
 
     if (isUserExist) {
@@ -61,25 +60,77 @@ document.getElementById('adminRegisterForm').addEventListener('submit', function
         return;
     }
 
-    // Добавление нового пользователя
+
     users.push({
         email: registerEmail,
         password: registerPassword
     });
 
-    // Сохранение пользователей в localStorage
+
     localStorage.setItem('users', JSON.stringify(users));
 
-    // Сброс формы
+
     document.getElementById('adminRegisterForm').reset();
 
     alert('Registration successful!');
 });
 
-// Функция для валидации пароля
+
 function validatePassword(password) {
-    // Регулярное выражение для проверки пароля
+
     const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     return passwordRegex.test(password);
 }
+
+document.getElementById('toggleToRegister').addEventListener('click', function(event) {
+    event.preventDefault();
+    var registrationForm = document.getElementById('registrationForm');
+
+
+    if (registrationForm.style.display === 'none') {
+        registrationForm.style.display = 'block';
+        registrationForm.style.opacity = 0;
+        let opacity = 0;
+
+
+        const fadeIn = setInterval(function () {
+            if (opacity < 1) {
+                opacity += 0.1;
+                registrationForm.style.opacity = opacity;
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 50);
+    } else {
+
+        registrationForm.style.display = 'none';
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const userStatus = localStorage.getItem('userStatus');
+    const userName = localStorage.getItem('userName');
+    const accountButton = document.getElementById('accountButton');
+    const userNameDisplay = document.getElementById('userName');
+    const userIcon = document.getElementById('userIcon');
+
+    if (userStatus === 'admin') {
+        userNameDisplay.textContent = 'Admin';
+        userIcon.src = '../Image/admin.png';
+        accountButton.onclick = () => window.location.href = 'adminPage.html';
+    } else if (userStatus === 'user') {
+        userNameDisplay.textContent = userName;
+        userIcon.src = '../Image/user.png';
+        accountButton.onclick = () => window.location.href = 'userPage.html';
+    } else {
+        accountButton.onclick = () => window.location.href = 'admin.html';
+    }
+});
+
+
+
+
+
+
 
