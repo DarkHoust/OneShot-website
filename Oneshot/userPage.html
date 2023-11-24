@@ -1,9 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>User Page</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/png" href="../Image/lamp-icon.png">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
     <style>
+        body, header, .card-header, footer {
+            background-color: #000;
+        }
+
+        .card-header, .btn-primary {
+            color: #fff;
+            background-color: #800080;
+        }
+
+        .card-header {
+            border-bottom: 1px solid #800080;
+        }
+
+        .form-label {
+            color: #800080;
+        }
+
+        .form-control {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #800080;
+        }
+
+        .btn-primary {
+            border-color: #800080;
+        }
+
+        .btn-primary:hover {
+            background-color: #660066;
+        }
+
+
+        .logout-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+        }
+
+
+        .logout-button {
+            background-color: #800080;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #660066;
+        }
         #logout-container {
 
         }
@@ -24,12 +87,86 @@
         }
     </style>
 </head>
+
 <body>
 
-<div id="logout-container">
-    <button id="logoutButton">Logout</button>
-</div>
+<header class="bg-black">
+    <nav class="navbar-dark">
+        <div class="d-flex">
+            <button class="btn mt-4 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="../Image/whiteToogler.png" width="30"></button>
 
+            <div class="container-fluid text-center mt-4 navbar-brand me-2">
+                <a href="main.html"><img id="lamp-logo" class="img-center ms-0 me-5 pe-lg-0" src="../Image/lamp-icon.png" alt="OneShot" width="50"></a></a>
+            </div>
+
+        </div>
+
+        <div class="d-block">
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header bg-black">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body bg-black">
+                    <p>
+                    <div class="bg-black mt-4">
+                        <ul class=" mb-2 mb-lg-0 px-4">
+                            <li class="px-4">
+                                <a class="nav-link text-white" href="main.html">Home</a>
+                            </li>
+                            <li class="px-4">
+                                <a class="nav-link text-white" href="#trailer-video">Trailer</a>
+                            </li>
+                            <li class="px-4">
+                                <a class="nav-link text-white" href="merchStore.html">Store</a>
+                            </li>
+                            <li class="px-4">
+                                <a class="nav-link text-white" href="#Gallery">Gallery</a>
+                            </li>
+                            <li class="px-4">
+                                <a class="nav-link text-white" href="RequirementPage.html">F.A.Q.</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center justify-content-center mt-4 d-sm-none d-md-none d-none d-lg-flex">
+            <ul class="mb-2 mb-lg-0 px-4">
+                <li class="d-inline-block px-4">
+                    <a class="nav-link text-white" href="#trailer-video">Trailer</a>
+                </li>
+                <li class="d-inline-block px-4">
+                    <a class="nav-link text-white" href="merchStore.html">Store</a>
+                </li>
+                <li class="d-inline-block px-4">
+                    <a class="nav-link text-white" href="#Gallery">Gallery</a>
+                </li>
+                <li class="d-inline-block px-4">
+                    <a class="nav-link text-white" href="RequirementPage.html">F.A.Q.</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="logout-container">
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </div>
+
+</header>
+
+<main class="container my-5">
+
+
+
+</main>
+
+<footer>
+
+</footer>
+
+<script src="adminPage.html.js"></script>
 <script>
 
     document.getElementById('logoutButton').addEventListener('click', function() {
@@ -41,6 +178,5 @@
         window.location.href = 'admin.html';
     });
 </script>
-
 </body>
 </html>
